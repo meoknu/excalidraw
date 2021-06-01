@@ -323,7 +323,7 @@ const ExcalidrawWrapper = () => {
         >
           {/* <GitHubCorner theme={appState.theme} dir={document.dir} /> */}
           {/* FIXME remove after 2021-05-20 */}
-          {PlusLinkJSX}
+          {/* {PlusLinkJSX} */}
         </div>
       );
     },

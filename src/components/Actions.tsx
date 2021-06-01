@@ -201,7 +201,7 @@ export const ShapesSwitcher = ({
         />
       );
     })}
-    <ToolButton
+    {/* <ToolButton
       className="Shape ToolIcon_type_button__library"
       type="button"
       icon={LIBRARY_ICON}
@@ -213,7 +213,7 @@ export const ShapesSwitcher = ({
       onClick={() => {
         setAppState({ isLibraryOpen: !isLibraryOpen });
       }}
-    />
+    /> */}
   </>
 );
 
@@ -229,9 +229,9 @@ export const ZoomActions = ({
       {renderAction("zoomIn")}
       {renderAction("zoomOut")}
       {renderAction("resetZoom")}
-      <div style={{ marginInlineStart: 4 }}>
+      {/* <div style={{ marginInlineStart: 4 }}>
         {(zoom.value * 100).toFixed(0)}%
-      </div>
+      </div> */}
     </Stack.Row>
   </Stack.Col>
 );

@@ -74,6 +74,8 @@
     padding-right: var(--sar, 0);
     padding-bottom: var(--sab, 0);
     padding-left: var(--sal, 0);
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .panelRow {
@@ -311,8 +313,9 @@
 
   .App-menu_top {
     grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: 0fr 0fr 0fr;
     grid-gap: 4px;
-    align-items: flex-start;
+    align-items: flex-end;
     cursor: default;
     pointer-events: none !important;
   }
@@ -340,7 +343,7 @@
     z-index: 100;
 
     :root[dir="ltr"] & {
-      left: 0.25rem;
+      // left: 0.25rem;
     }
 
     :root[dir="rtl"] & {

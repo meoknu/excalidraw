@@ -41,7 +41,7 @@ export const getDefaultAppState = (): Omit<
     editingGroupId: null,
     editingLinearElement: null,
     elementLocked: false,
-    elementType: "selection",
+    elementType: "freedraw",
     errorMessage: null,
     exportBackground: true,
     exportScale: defaultExportScale,

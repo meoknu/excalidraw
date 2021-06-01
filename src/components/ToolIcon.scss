@@ -12,6 +12,7 @@
     -webkit-tap-highlight-color: transparent;
     border-radius: var(--space-factor);
     user-select: none;
+    width: min-content;
   }
 
   .ToolIcon--plain {

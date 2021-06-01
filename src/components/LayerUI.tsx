@@ -503,6 +503,15 @@ const LayerUI = ({
           maxHeight: `${appState.height - 200}px`,
         }}
       >
+        <div className="panelColumn">
+          <h3>Background</h3>
+          <BackgroundPickerAndDarkModeToggle
+            actionManager={actionManager}
+            appState={appState}
+            setAppState={setAppState}
+            showThemeBtn={showThemeBtn}
+          /><br/>
+        </div>
         <SelectedShapeActions
           appState={appState}
           elements={elements}
@@ -550,48 +559,49 @@ const LayerUI = ({
     return (
       <FixedSideContainer side="top">
         <div className="App-menu App-menu_top">
-          <Stack.Col
-            gap={4}
-            className={clsx({ "disable-pointerEvents": zenModeEnabled })}
-          >
-            {viewModeEnabled
-              ? renderViewModeCanvasActions()
-              : renderCanvasActions()}
-            {shouldRenderSelectedShapeActions && renderSelectedShapeActions()}
-          </Stack.Col>
           {!viewModeEnabled && (
             <Section heading="shapes">
               {(heading) => (
                 <Stack.Col gap={4} align="start">
-                  <Stack.Row gap={1}>
+                  <Stack.Col gap={1}>
                     <Island
                       padding={1}
                       className={clsx({ "zen-mode": zenModeEnabled })}
                     >
-                      <HintViewer appState={appState} elements={elements} />
-                      {heading}
-                      <Stack.Row gap={1}>
+                      {/* <HintViewer appState={appState} elements={elements} /> */}
+                      {/* {heading} */}
+                      <Stack.Col gap={1}>
                         <ShapesSwitcher
                           canvas={canvas}
                           elementType={appState.elementType}
                           setAppState={setAppState}
                           isLibraryOpen={appState.isLibraryOpen}
                         />
-                      </Stack.Row>
+                        {actionManager.renderAction("clearCanvas")}
+                      </Stack.Col>
                     </Island>
-                    <LockIcon
+                    {/* <LockIcon
                       zenModeEnabled={zenModeEnabled}
                       checked={appState.elementLocked}
                       onChange={onLockToggle}
                       title={t("toolBar.lock")}
-                    />
-                  </Stack.Row>
-                  {libraryMenu}
+                    /> */}
+                  </Stack.Col>
+                  {/* {libraryMenu} */}
                 </Stack.Col>
               )}
             </Section>
           )}
-          <div
+          <Stack.Col
+            gap={1}
+            className={clsx({ "disable-pointerEvents": zenModeEnabled })}
+          >
+            {/* {viewModeEnabled
+              ? renderViewModeCanvasActions()
+              : renderCanvasActions() } */}
+            {shouldRenderSelectedShapeActions && renderSelectedShapeActions()}
+          </Stack.Col>
+          {/* <div
             className={clsx(
               "layer-ui__wrapper__top-right zen-mode-transition",
               {
@@ -614,7 +624,7 @@ const LayerUI = ({
                   ))}
             </UserList>
             {renderTopRightUI?.(isMobile, appState)}
-          </div>
+          </div> */}
         </div>
       </FixedSideContainer>
     );
@@ -634,16 +644,6 @@ const LayerUI = ({
             },
           )}
         >
-          <Stack.Col gap={2}>
-            <Section heading="canvasActions">
-              <Island padding={1}>
-                <ZoomActions
-                  renderAction={actionManager.renderAction}
-                  zoom={appState.zoom}
-                />
-              </Island>
-            </Section>
-          </Stack.Col>
         </div>
         <div
           className={clsx(
@@ -653,7 +653,7 @@ const LayerUI = ({
             },
           )}
         >
-          {renderCustomFooter?.(false, appState)}
+          {/* {renderCustomFooter?.(false, appState)} */}
         </div>
         <div
           className={clsx(
@@ -663,7 +663,23 @@ const LayerUI = ({
             },
           )}
         >
-          {actionManager.renderAction("toggleShortcuts")}
+          {/* {actionManager.renderAction("toggleShortcuts")} */}
+          <Stack.Col gap={2}>
+            <Section heading="canvasActions">
+              <Island padding={1}>
+                <ZoomActions
+                  renderAction={actionManager.renderAction}
+                  zoom={appState.zoom}
+                />
+              </Island>
+            </Section>
+            {/* <BackgroundPickerAndDarkModeToggle
+              actionManager={actionManager}
+              appState={appState}
+              setAppState={setAppState}
+              showThemeBtn={showThemeBtn}
+            /> */}
+          </Stack.Col>
         </div>
         <button
           className={clsx("disable-zen-mode", {
