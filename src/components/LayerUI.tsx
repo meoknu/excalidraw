@@ -577,6 +577,7 @@ const LayerUI = ({
                           setAppState={setAppState}
                           isLibraryOpen={appState.isLibraryOpen}
                         />
+                        {shouldRenderSelectedShapeActions && actionManager.renderAction("toggleEditMenu")}
                         {actionManager.renderAction("clearCanvas")}
                       </Stack.Col>
                     </Island>
@@ -599,7 +600,7 @@ const LayerUI = ({
             {/* {viewModeEnabled
               ? renderViewModeCanvasActions()
               : renderCanvasActions() } */}
-            {shouldRenderSelectedShapeActions && renderSelectedShapeActions()}
+            {shouldRenderSelectedShapeActions && appState.openMenu === "shape" && !viewModeEnabled && renderSelectedShapeActions()}
           </Stack.Col>
           {/* <div
             className={clsx(

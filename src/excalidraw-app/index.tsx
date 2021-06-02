@@ -157,7 +157,7 @@ const initializeScene = async (opts: {
     }
   }
 
-  if (roomLinkData) {
+  if (roomLinkData|| true) {
     return opts.collabAPI.initializeSocketClient(roomLinkData);
   } else if (scene) {
     return scene;
