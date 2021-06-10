@@ -92,8 +92,10 @@ const initializeScene = async (opts: {
   let scene: RestoredDataState & {
     scrollToContent?: boolean;
   } = await loadScene(null, null, localDataState);
-
-  let roomLinkData = getCollaborationLinkData(window.location.href);
+  const roomLink = window.location.href.split("?")[0]
+    ? window.location.href.split("?")[0]
+    : window.location.href;
+  let roomLinkData = getCollaborationLinkData(roomLink);
   const isExternalScene = !!(id || jsonBackendMatch || roomLinkData);
   if (isExternalScene) {
     if (
@@ -157,7 +159,7 @@ const initializeScene = async (opts: {
     }
   }
 
-  if (roomLinkData|| true) {
+  if (roomLinkData || true) {
     return opts.collabAPI.initializeSocketClient(roomLinkData);
   } else if (scene) {
     return scene;

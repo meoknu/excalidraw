@@ -3,6 +3,7 @@ import { getDefaultAppState } from "../appState";
 import { ColorPicker } from "../components/ColorPicker";
 import { resetZoom, trash, zoomIn, zoomOut } from "../components/icons";
 import { ToolButton } from "../components/ToolButton";
+import { TrashButton } from "../components/TrashButton";
 import { DarkModeToggle } from "../components/DarkModeToggle";
 import { ZOOM_STEP } from "../constants";
 import { getCommonBounds, getNonDeletedElements } from "../element";
@@ -66,16 +67,14 @@ export const actionClearCanvas = register({
     };
   },
   PanelComponent: ({ updateData }) => (
-    <ToolButton
+    <TrashButton
       type="button"
       icon={trash}
       title={t("buttons.clearReset")}
       aria-label={t("buttons.clearReset")}
       showAriaLabel={useIsMobile()}
-      onClick={() => {
-        if (window.confirm(t("alerts.clearReset"))) {
-          updateData(null);
-        }
+      clearReset={() => {
+        updateData(null);
       }}
       data-testid="clear-canvas-button"
     />
