@@ -109,6 +109,15 @@ class CollabWrapper extends PureComponent<Props, CollabState> {
     window.addEventListener(EVENT.BEFORE_UNLOAD, this.beforeUnload);
     window.addEventListener(EVENT.UNLOAD, this.onUnload);
 
+    const querystring = window.location.href
+      ? window.location.href.split("?")[1]
+      : window.location.search.slice(1);
+    const username = new URLSearchParams(querystring).get("name") || "";
+    this.setState({
+      username,
+    });
+    saveUsernameToLocalStorage(username);
+
     if (
       process.env.NODE_ENV === ENV.TEST ||
       process.env.NODE_ENV === ENV.DEVELOPMENT

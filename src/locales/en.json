@@ -139,7 +139,7 @@
     "exitZenMode": "Exit zen mode"
   },
   "alerts": {
-    "clearReset": "This will clear the whole canvas. Are you sure?",
+    "clearReset": "This will clear the whiteboard. Are you sure you want to continue?",
     "couldNotCreateShareableLink": "Couldn't create shareable link.",
     "couldNotCreateShareableLinkTooBig": "Couldn't create shareable link: the scene is too big",
     "couldNotLoadInvalidFile": "Couldn't load invalid file",

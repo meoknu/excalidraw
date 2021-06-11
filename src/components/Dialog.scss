@@ -31,6 +31,44 @@
     padding: 0 16px 16px;
   }
 
+  .Dialog .confirm-button {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-block;
+    line-height: 24px;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+    width: auto;
+    font-size: 15px;
+    background: rgb(24, 150, 198);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(24, 150, 198);
+    border-image: initial;
+    border-radius: 0px;
+    padding: 5px 16px;
+  }
+
+  .Dialog .cancel-button {
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-block;
+    line-height: 24px;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+    width: auto;
+    font-size: 15px;
+    background: rgb(24, 150, 198);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(24, 150, 198);
+    border-image: initial;
+    border-radius: 0px;
+    padding: 5px 16px;
+  }
+
   @include isMobile {
     .Dialog {
       --metric: calc(var(--space-factor) * 4);
@@ -69,6 +107,44 @@
 
     .Dialog .Modal__close {
       order: -1;
+    }
+
+    .Dialog .confirm-button {
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      display: inline-block;
+      line-height: 24px;
+      margin: 10px;
+      position: relative;
+      text-align: center;
+      width: auto;
+      font-size: 15px;
+      background: rgb(24, 150, 198);
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(24, 150, 198);
+      border-image: initial;
+      border-radius: 0px;
+      padding: 5px 16px;
+    }
+
+    .Dialog .cancel-button {
+      color: rgb(255, 255, 255);
+      cursor: pointer;
+      display: inline-block;
+      line-height: 24px;
+      margin: 10px;
+      position: relative;
+      text-align: center;
+      width: auto;
+      font-size: 15px;
+      background: rgb(24, 150, 198);
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(24, 150, 198);
+      border-image: initial;
+      border-radius: 0px;
+      padding: 5px 16px;
     }
   }
 }
