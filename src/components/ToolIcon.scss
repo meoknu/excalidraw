@@ -155,8 +155,8 @@
   // shrink shape icons on small viewports to make them fit
   @media (max-width: 425px) {
     .Shape .ToolIcon__icon {
-      width: 2rem;
-      height: 2rem;
+      width: 1.8rem;
+      height: 1.8rem;
 
       svg {
         height: 0.8em;
