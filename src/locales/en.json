@@ -106,7 +106,7 @@
     "toggleTheme": "Toggle theme"
   },
   "buttons": {
-    "clearReset": "Reset the canvas",
+    "clearReset": "Delete All",
     "exportJSON": "Export to file",
     "exportImage": "Save as image",
     "export": "Export",
