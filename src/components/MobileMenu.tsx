@@ -11,11 +11,11 @@ import { HintViewer } from "./HintViewer";
 import { calculateScrollCenter } from "../scene";
 import { SelectedShapeActions, ShapesSwitcher } from "./Actions";
 import { Section } from "./Section";
-import CollabButton from "./CollabButton";
+// import CollabButton from "./CollabButton";
 import { SCROLLBAR_WIDTH, SCROLLBAR_MARGIN } from "../scene/scrollbars";
-import { LockIcon } from "./LockIcon";
-import { UserList } from "./UserList";
-import { BackgroundPickerAndDarkModeToggle } from "./BackgroundPickerAndDarkModeToggle";
+// import { LockIcon } from "./LockIcon";
+// import { UserList } from "./UserList";
+// import { BackgroundPickerAndDarkModeToggle } from "./BackgroundPickerAndDarkModeToggle";
 
 type MobileMenuProps = {
   appState: AppState;
@@ -68,11 +68,11 @@ export const MobileMenu = ({
                     />
                   </Stack.Row>
                 </Island>
-                <LockIcon
+                {/* <LockIcon
                   checked={appState.elementLocked}
                   onChange={onLockToggle}
                   title={t("toolBar.lock")}
-                />
+                /> */}
               </Stack.Row>
               {libraryMenu}
             </Stack.Col>
@@ -117,24 +117,24 @@ export const MobileMenu = ({
     return (
       <>
         {actionManager.renderAction("clearCanvas")}
-        {actionManager.renderAction("loadScene")}
-        {renderJSONExportDialog()}
-        {renderImageExportDialog()}
-        {onCollabButtonClick && (
+        {/* {actionManager.renderAction("loadScene")} */}
+        {/* {renderJSONExportDialog()} */}
+        {/* {renderImageExportDialog()} */}
+        {/* {onCollabButtonClick && (
           <CollabButton
             isCollaborating={isCollaborating}
             collaboratorCount={appState.collaborators.size}
             onClick={onCollabButtonClick}
           />
-        )}
-        {
+        )} */}
+        {/* {
           <BackgroundPickerAndDarkModeToggle
             actionManager={actionManager}
             appState={appState}
             setAppState={setAppState}
             showThemeBtn={showThemeBtn}
           />
-        }
+        } */}
       </>
     );
   };
@@ -155,7 +155,7 @@ export const MobileMenu = ({
               <div className="panelColumn">
                 <Stack.Col gap={4}>
                   {renderCanvasActions()}
-                  {renderCustomFooter?.(true, appState)}
+                  {/* {renderCustomFooter?.(true, appState)}
                   {appState.collaborators.size > 0 && (
                     <fieldset>
                       <legend>{t("labels.collaborators")}</legend>
@@ -175,7 +175,7 @@ export const MobileMenu = ({
                           ))}
                       </UserList>
                     </fieldset>
-                  )}
+                  )} */}
                 </Stack.Col>
               </div>
             </Section>
