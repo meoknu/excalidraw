@@ -251,8 +251,73 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 5% !important;
+    // top: 5% !important;
     right: -10%;
+  }
+
+  /* Landscape */
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    .App-top-bar {
+      top: 10% !important;
+    }
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+    .App-top-bar {
+      top: 5% !important;
+    }
+  }
+
+  @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+    .App-top-bar {
+      top: 10% !important;
+    }
+  }
+
+  @media only screen and (min-width: 732px) and (orientation: portrait) {
+    .App-top-bar {
+      top: 5% !important;
+    }
+  }
+  @media only screen and (min-width: 732px) and (orientation: landscape) {
+    .App-top-bar {
+      top: 14% !important;
+    }
+  }
+  @media only screen and (min-device-width: 720px) and (orientation: landscape) {
+    .App-top-bar {
+      top: 14% !important;
+    }
+  }
+  @media only screen and (min-device-width: 360px) and (orientation: portrait) {
+    .App-top-bar {
+      top: 7% !important;
+    }
+  }
+  @media only screen and (min-device-width: 360px) and (orientation: landscape) {
+    .App-top-bar {
+      top: 14% !important;
+    }
+  }
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 359px) and (orientation: portrait) {
+    .App-top-bar {
+      top: 8% !important;
+      right: -45px !important;
+    }
+  }
+
+  /* galaxy fold*/
+  @media only screen and (min-width: 280px) and (max-width: 319px) and (orientation: portrait) {
+    .App-top-bar {
+      top: 16% !important;
+      right: 0px !important;
+    }
+  }
+  @media only screen and (min-device-width: 280px) and (max-device-width: 319px) and (orientation: landscape) {
+    .App-top-bar {
+      top: 10% !important;
+      right: 0px !important;
+    }
   }
 
   .App-bottom-bar {
